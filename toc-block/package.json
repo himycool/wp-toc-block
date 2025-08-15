@@ -1,0 +1,15 @@
+{
+  "name": "toc-block",
+  "version": "1.0.0",
+  "description": "Inner Table of Contents Block for WordPress",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "author": "825media",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.0.0"
+  }
+}

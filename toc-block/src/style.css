@@ -1,0 +1,20 @@
+.toc-block-inner-toc {
+  background: #f8f9fa;
+  border: 1px solid #e2e2e2;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.toc-block-inner-toc ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.toc-block-inner-toc li {
+  margin-bottom: 0.3em;
+}
+.toc-block-inner-toc a {
+  color: #0073aa;
+  text-decoration: none;
+}
+.toc-block-inner-toc a:hover {
+  text-decoration: underline;
+}
