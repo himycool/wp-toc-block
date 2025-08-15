@@ -3,7 +3,7 @@
 Plugin Name: TOC Block
 Description: Adds a block for an inner Table of Contents (TOC) that lists all H2s, allows custom TOC labels, and generates anchor links trimmed to 30 characters.
 Version: 1.0.0
-Author: D.K. Himas Khan
+Author: 825media
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -60,9 +60,10 @@ function tocBlockRenderCallback( $attributes ) {
     $output = '<nav class="toc-block-inner-toc"><ul>';
     foreach ( $attributes['tocItems'] as $item ) {
         if ( !empty( $item['ignore'] ) ) { continue; }
-        $label = esc_html( $item['customLabel'] !== '' ? $item['customLabel'] : $item['text'] );
-        $anchor = esc_attr( $item['anchor'] );
-        $output .= "<li><a href='#$anchor'>$label</a></li>";
+        $label = trim( $item['customLabel'] !== '' ? $item['customLabel'] : $item['text'] );
+        $anchor = trim( $item['anchor'] );
+        if ( $label === '' || $anchor === '' ) { continue; }
+        $output .= "<li><a href='#$anchor'>" . esc_html($label) . "</a></li>";
     }
     $output .= '</ul></nav>';
     return $output;
